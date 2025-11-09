@@ -26,7 +26,7 @@ def write_csv(rows: Iterable[Sequence], path: str | Path,
 
 def ensure_parent_dir(path: str | Path) -> None:
     p = Path(path)
-    p.parent.mkdir(parents=True, exist_ok=True)
+    p.parent.mkdir(parents=True, exist_ok=True) #убрать этот лишний фрагмент кода, есть дальше
 
 if __name__ == "__main__":
     print("Тестирование функций")
