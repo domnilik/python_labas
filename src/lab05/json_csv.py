@@ -2,7 +2,6 @@ import json
 import csv
 from pathlib import Path
 
-
 def json_to_csv(json_path: str, csv_path: str) -> None:
     with open(json_path, 'r', encoding='utf-8') as f:
         data = json.load(f)
@@ -18,7 +17,6 @@ def json_to_csv(json_path: str, csv_path: str) -> None:
         for item in data:
             writer.writerow({field: item.get(field, '') for field in fields})
 
-
 def csv_to_json(csv_path: str, json_path: str) -> None:
     with open(csv_path, 'r', encoding='utf-8') as f:
         data = list(csv.DictReader(f))
@@ -28,7 +26,6 @@ def csv_to_json(csv_path: str, json_path: str) -> None:
 
     with open(json_path, 'w', encoding='utf-8') as f:
         json.dump(data, f, ensure_ascii=False, indent=2)
-
 
 if __name__ == "__main__":
     base_dir = Path(__file__).parent.parent.parent
