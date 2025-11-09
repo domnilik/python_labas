@@ -32,7 +32,7 @@ if __name__ == "__main__":
 
     people_json = base_dir / "data" / "samples" / "people.json"
     people_csv = base_dir / "data" / "samples" / "people.csv"
-    output_csv = base_dir / "data" / "out" / "people.csv"
+    output_csv = base_dir / "data" / "out" / "people_from_json.csv"
     output_json = base_dir / "data" / "out" / "people_from_csv.json"
 
     (base_dir / "data" / "out").mkdir(exist_ok=True)
