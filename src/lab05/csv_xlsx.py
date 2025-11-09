@@ -1,7 +1,9 @@
 import csv
 from pathlib import Path
 
+
 def csv_to_xlsx(csv_path: str, xlsx_path: str) -> None:
+
     if not Path(csv_path).exists():
         raise FileNotFoundError(f"Файл {csv_path} не найден")
 
@@ -24,8 +26,7 @@ def csv_to_xlsx(csv_path: str, xlsx_path: str) -> None:
         for cell in column:
             if cell.value:
                 max_length = max(max_length, len(str(cell.value)))
-        column_width = max(max_length + 2, 8)
-        ws.column_dimensions[column[0].column_letter].width = column_width
+        ws.column_dimensions[column[0].column_letter].width = max(max_length + 2, 8)
 
     wb.save(xlsx_path)
 
