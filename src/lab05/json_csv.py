@@ -9,7 +9,7 @@ def json_to_csv(json_path: str, csv_path: str) -> None:
     if not data or not isinstance(data, list): #если data не является списком
         raise ValueError("Пустой JSON")
 
-    fields = sorted(set().union(*(item.keys() for item in data))) #сортируем список всех столбцов таблицы
+    fields = sorted(set().union(*(item.keys() for item in data))) #сортируем все названия полей из всех записей, убираем повторы
 
     with open(csv_path, 'w', newline='', encoding='utf-8') as f:
         writer = csv.DictWriter(f, fieldnames=fields) #создаем писателя
@@ -19,16 +19,16 @@ def json_to_csv(json_path: str, csv_path: str) -> None:
 
 def csv_to_json(csv_path: str, json_path: str) -> None:
     with open(csv_path, 'r', encoding='utf-8') as f:
-        data = list(csv.DictReader(f))
+        data = list(csv.DictReader(f)) #превращаем в обычный список словарей. Dictreader - читатель, который понимает все заголовки
 
     if not data:
         raise ValueError("CSV файл пустой")
 
     with open(json_path, 'w', encoding='utf-8') as f:
-        json.dump(data, f, ensure_ascii=False, indent=2)
+        json.dump(data, f, ensure_ascii=False, indent=2) #json.dump - записываем данные в файл, ensure_ascii=False - русские буквы остаются русскими, indent=2 - красивые отступы
 
 if __name__ == "__main__":
-    base_dir = Path(__file__).parent.parent.parent
+    base_dir = Path(__file__).parent.parent.parent #определяем базовую папку, поднимаемся на 3 уровня вверх от файла
 
     people_json = base_dir / "data" / "samples" / "people.json"
     people_csv = base_dir / "data" / "samples" / "people.csv"
