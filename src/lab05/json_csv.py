@@ -7,7 +7,7 @@ def json_to_csv(json_path: str, csv_path: str) -> None:
         data = json.load(f)
 
     if not data or not isinstance(data, list):
-        raise ValueError("Пустой JSON или неподдерживаемая структура")
+        raise ValueError("Пустой JSON")
 
     fields = sorted(set().union(*(item.keys() for item in data)))
 
