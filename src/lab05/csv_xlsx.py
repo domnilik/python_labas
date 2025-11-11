@@ -8,7 +8,7 @@ def csv_to_xlsx(csv_path: str, xlsx_path: str) -> None:
         raise FileNotFoundError(f"Файл {csv_path} не найден")
 
     with open(csv_path, encoding="utf-8") as f:
-        data = list(csv.reader(f))
+        data = list(csv.reader(f)) #собери все что прочитал в большой список
 
     if not data: #если данных нет
         raise ValueError("CSV файл пустой")
