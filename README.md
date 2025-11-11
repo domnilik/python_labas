@@ -52,6 +52,7 @@ if __name__ == "__main__":
         print(f"{e}")
 ```
 
+json to csv
 
 Файл на вход:
 
@@ -60,6 +61,21 @@ if __name__ == "__main__":
 Файл на выход:
 
 <img width="155" height="80" alt="image" src="https://github.com/user-attachments/assets/78579fe7-5196-46df-b91e-fd7c725afa7b" />
+
+
+csv to json
+
+Файл на вход:
+
+<img width="155" height="80" alt="image" src="https://github.com/user-attachments/assets/78579fe7-5196-46df-b91e-fd7c725afa7b" />
+
+Файл на выход:
+
+<img width="298" height="333" alt="image" src="https://github.com/user-attachments/assets/29d7a1d7-7942-4f89-8b9e-165eda3ad1d9" />
+
+
+
+Задание В
 
 
 
