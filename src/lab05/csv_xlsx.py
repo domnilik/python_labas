@@ -3,6 +3,12 @@ from pathlib import Path
 
 
 def csv_to_xlsx(csv_path: str, xlsx_path: str) -> None:
+    xlsx_path = Path(xlsx_path)
+    csv_path = Path(csv_path)
+
+    if not csv_path.exists(): raise ValueError("Входной файл не существует")
+    if xlsx_path.suffix != ".json": raise ValueError(f'Неверное расширение файла "{xlsx_path.suffix}"')
+    if csv_path.suffix != ".csv": raise ValueError(f'Неверное расширение файла "{csv_path.suffix}"')
 
     if not Path(csv_path).exists():
         raise FileNotFoundError(f"Файл {csv_path} не найден")
