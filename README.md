@@ -46,10 +46,10 @@ if __name__ == "__main__":
 
     try:
         json_to_csv(str(people_json), str(output_csv))
-        print("JSON → CSV")
+        print("JSON to CSV")
 
         csv_to_json(str(people_csv), str(output_json))
-        print("CSV → JSON")
+        print("CSV to JSON")
 
     except Exception as e:
         print(f"{e}")
@@ -122,7 +122,7 @@ if __name__ == "__main__":
             str(base_dir / "data" / "samples" / "people.csv"),
             str(base_dir / "data" / "out" / "people.xlsx")
         )
-        print("CSV → XLSX")
+        print("CSV to XLSX")
     except Exception as e:
         print(f"{e}")
 
