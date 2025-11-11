@@ -126,6 +126,7 @@ if __name__ == "__main__":
 ```
 
 
+<img width="341" height="190" alt="image" src="https://github.com/user-attachments/assets/6baf920c-853a-4cde-b292-b3dac3df9e58" />
 
 
 
@@ -146,7 +147,7 @@ if __name__ == "__main__":
 
 
 
-
+Лабораторная работа 1
 #задание 1
 <img width="1920" height="1030" alt="img01" src="https://github.com/user-attachments/assets/29bfdd0d-0ab4-4e5e-9758-3920f317cc50" />
 
