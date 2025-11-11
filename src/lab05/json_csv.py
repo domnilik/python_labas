@@ -4,18 +4,18 @@ from pathlib import Path
 
 def json_to_csv(json_path: str, csv_path: str) -> None:
     with open(json_path, 'r', encoding='utf-8') as f:
-        data = json.load(f)
+        data = json.load(f) #читаем JSON файл и превращаем в питоновские данные (списки, словари), обозначаем это как data
 
-    if not data or not isinstance(data, list):
+    if not data or not isinstance(data, list): #если data не является списком
         raise ValueError("Пустой JSON")
 
-    fields = sorted(set().union(*(item.keys() for item in data)))
+    fields = sorted(set().union(*(item.keys() for item in data))) #сортируем список всех столбцов таблицы
 
     with open(csv_path, 'w', newline='', encoding='utf-8') as f:
-        writer = csv.DictWriter(f, fieldnames=fields)
-        writer.writeheader()
+        writer = csv.DictWriter(f, fieldnames=fields) #создаем писателя
+        writer.writeheader() #напиши заголовок
         for item in data:
-            writer.writerow({field: item.get(field, '') for field in fields})
+            writer.writerow({field: item.get(field, '') for field in fields}) #пробуем найти поле field в записи, если не находим, выводим пустую строку
 
 def csv_to_json(csv_path: str, json_path: str) -> None:
     with open(csv_path, 'r', encoding='utf-8') as f:
