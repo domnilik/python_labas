@@ -10,6 +10,12 @@ import csv
 from pathlib import Path
 
 def json_to_csv(json_path: str, csv_path: str) -> None:
+    json_path = Path(json_path)
+    csv_path = Path(csv_path)
+
+    if not json_path.exists(): raise ValueError("Входной файл не существует")
+    if json_path.suffix != ".json": raise ValueError(f'Неверное расширение файла "{json_path.suffix}"')
+    if csv_path.suffix != ".csv": raise ValueError(f'Неверное расширение файла "{csv_path.suffix}"')
     with open(json_path, 'r', encoding='utf-8') as f:
         data = json.load(f)
 
