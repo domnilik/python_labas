@@ -53,6 +53,16 @@ if __name__ == "__main__":
 ```
 
 
+Файл на вход:
+
+<img width="298" height="333" alt="image" src="https://github.com/user-attachments/assets/29d7a1d7-7942-4f89-8b9e-165eda3ad1d9" />
+
+Файл на выход:
+
+<img width="155" height="80" alt="image" src="https://github.com/user-attachments/assets/78579fe7-5196-46df-b91e-fd7c725afa7b" />
+
+
+
 
 
 
