@@ -3,7 +3,7 @@ import csv
 from pathlib import Path
 
 def json_to_csv(json_path: str, csv_path: str) -> None:
-    json_path = Path(json_path)
+    json_path = Path(json_path)#отсюда начинается обязательная проверка
     csv_path = Path(csv_path)
 
     if not json_path.exists(): raise ValueError("Входной файл не существует")
@@ -25,7 +25,7 @@ def json_to_csv(json_path: str, csv_path: str) -> None:
             writer.writerow({field: item.get(field, '') for field in fields}) #пробуем найти поле field в записи, если не находим, выводим пустую строку
 
 def csv_to_json(csv_path: str, json_path: str) -> None:
-    json_path = Path(json_path)
+    json_path = Path(json_path)#обязательная проверка
     csv_path = Path(csv_path)
 
     if not csv_path.exists(): raise ValueError("Входной файл не существует")

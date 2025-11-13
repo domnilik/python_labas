@@ -3,7 +3,7 @@ from pathlib import Path
 
 
 def csv_to_xlsx(csv_path: str, xlsx_path: str) -> None:
-    xlsx_path = Path(xlsx_path)
+    xlsx_path = Path(xlsx_path)#обязательная проверка
     csv_path = Path(csv_path)
 
     if not csv_path.exists(): raise ValueError("Входной файл не существует")
