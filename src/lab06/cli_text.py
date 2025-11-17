@@ -39,5 +39,6 @@ def main():
     elif args.command == "stats":
         stats(args.input, args.top)
 
+
 if __name__ == "__main__":
     main()
