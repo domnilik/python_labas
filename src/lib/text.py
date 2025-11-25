@@ -40,4 +40,4 @@ freq = count_freq(tok)
 # print(top_n(freq, n=2))
 tok_2 = ["bb", "aa", "bb", "aa", "cc"]
 freq_2 = count_freq(tok_2)
-# print(top_n(freq_2, n=2))
+# print(top_n(freq_2, n=2))с
