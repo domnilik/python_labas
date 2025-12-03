@@ -11,4 +11,4 @@ def students_from_json(path):
         data = json.load(f)
     return [Student.from_dict(obj) for obj in data]
 
-print(students_to_json([Student(fio='JohnDow', birthdate='2021-02-15', group='GRP-101', gpa=4.6), Student(fio='VladDementev', birthdate='2001-03-15', group='GRP-102', gpa=4.85)], r'C:\Users\huawei\PycharmProjects\python_labas\data\lab08\students_input.json'))
+print(students_from_json(r"C:\Users\huawei\PycharmProjects\python_labas\data\lab08\students_input.json"))
