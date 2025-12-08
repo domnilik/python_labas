@@ -1,14 +1,14 @@
 [
   {
-    "fio": "JohnDow",
-    "birthdate": "2021-02-15",
-    "group": "GRP-101",
-    "gpa": 4.6
+    "fio": "David Brown",
+    "birthdate": "2001-11-05",
+    "group": "GRP-302",
+    "gpa": 3.7
   },
   {
-    "fio": "VladDementev",
-    "birthdate": "2001-03-15",
-    "group": "GRP-102",
-    "gpa": 4.85
+    "fio": "Robert Taylor",
+    "birthdate": "2000-09-14",
+    "group": "HIST-201",
+    "gpa": 3.5
   }
 ]
