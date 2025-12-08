@@ -21,5 +21,3 @@ print(g.find("Тест"))
 print("\n=== remove() ===")
 g.remove("Тестовый Студент")
 print(g.find("Тест"))
-
-

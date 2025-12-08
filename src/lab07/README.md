@@ -118,3 +118,8 @@ def test_csv_to_json_nonexistent_file():
 ```
 
 ![](../../images/lab07/img02.png)
+
+#### Проверка стиля black
+
+![](../../images/lab07/img03.png)
+

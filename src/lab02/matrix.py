@@ -54,6 +54,7 @@ def col_sums(mat):
 
     return sums
 
+
 print("transpose:")
 print(transpose([[1, 2, 3]]))
 print(transpose([[1], [2], [3]]))

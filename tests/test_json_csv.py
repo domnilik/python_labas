@@ -26,7 +26,7 @@ def test_csv_to_json_roundtrip(tmp_path):
     src = tmp_path / "test.csv"
     dst = tmp_path / "test.json"
 
-    with src.open('w', encoding="utf-8", newline='') as f:
+    with src.open("w", encoding="utf-8", newline="") as f:
         writer = csv.DictWriter(f, fieldnames=["name", "age"])
         writer.writeheader()
         writer.writerow({"name": "Mayk", "age": "27"})

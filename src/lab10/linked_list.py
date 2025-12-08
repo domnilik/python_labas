@@ -100,4 +100,3 @@ class SinglyLinkedList:
     def __repr__(self):
         values = list(self)
         return f"SinglyLinkedList({values})"
-

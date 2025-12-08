@@ -1,5 +1,7 @@
 from src.lib.text import normalize, tokenize, count_freq, top_n
 import sys
+
+
 def main():
     text = sys.stdin.read()
     if not text.strip():
@@ -23,6 +25,7 @@ def main():
     for word, count in top_words:
         print(f"{word}: {count}")
 
+
 if __name__ == "__main__":
     test_text = "Привет, мир! Привет!!!"
 
@@ -36,5 +39,3 @@ if __name__ == "__main__":
     print("Топ-5:")
     for word, count in top:
         print(f"{word}:{count}")
-
-

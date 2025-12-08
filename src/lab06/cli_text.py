@@ -2,10 +2,12 @@ import argparse
 from pathlib import Path
 from src.lib.text import normalize, tokenize, count_freq, top_n
 
+
 def cmd_cat(path, numbered=False):
     with open(path, encoding="utf-8") as f:
         for i, line in enumerate(f, start=1):
             print(f"{i}\t{line.rstrip()}" if numbered else line.rstrip())
+
 
 def stats(path, topk):
     text = Path(path).read_text(encoding="utf-8")
@@ -19,6 +21,7 @@ def stats(path, topk):
     print(f"Топ-{topk} слов:")
     for word, cnt in top:
         print(f"{word}: {cnt}")
+
 
 def main():
     parser = argparse.ArgumentParser(description="CLI-converter")

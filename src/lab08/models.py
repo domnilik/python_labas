@@ -2,7 +2,8 @@
 from dataclasses import dataclass
 from datetime import datetime, date
 
-@dataclass #декоратор (упрощает инициализацию класса, автоматически создает функции __init__ и __repr__ )
+
+@dataclass  # декоратор (упрощает инициализацию класса, автоматически создает функции __init__ и __repr__ )
 class Student:
     fio: str
     birthdate: str
@@ -11,7 +12,7 @@ class Student:
 
     def __post_init__(self):
         if isinstance(self.gpa, str) or self.gpa < 0 or self.gpa > 5:
-            raise ValueError('Invalid GPA-score')
+            raise ValueError("Invalid GPA-score")
         try:
             self._date_of_birth_ = datetime.strptime(self.birthdate, "%Y-%m-%d")
         except ValueError:
@@ -25,7 +26,7 @@ class Student:
             "fio": self.fio,
             "birthdate": self.birthdate,
             "group": self.group,
-            "gpa": self.gpa
+            "gpa": self.gpa,
         }
 
     @classmethod
@@ -33,5 +34,4 @@ class Student:
         return Student(d["fio"], d["birthdate"], d["group"], d["gpa"])
 
     def __str__(self):
-        return f'Obj Student. fio: {self.fio}, birthdate: {self.birthdate}, group: {self.group}, gpa: {self.gpa}'
-
+        return f"Obj Student. fio: {self.fio}, birthdate: {self.birthdate}, group: {self.group}, gpa: {self.gpa}"

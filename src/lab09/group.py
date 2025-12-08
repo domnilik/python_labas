@@ -11,23 +11,27 @@ class Group:
             self.path.write_text("", encoding="utf-8")
 
     def __read_all(self) -> List[dict]:
-        with self.path.open('r', encoding='utf-8') as f:
+        with self.path.open("r", encoding="utf-8") as f:
             reader = csv.DictReader(f)
             return [row for row in reader]
 
     def list(self) -> List[Student]:
         rows = self.__read_all()
-        return [Student(r["fio"], r["birthdate"], r["group"], float(r["gpa"])) for r in rows]
+        return [
+            Student(r["fio"], r["birthdate"], r["group"], float(r["gpa"])) for r in rows
+        ]
 
     def add(self, student: Student):
         rows = self.__read_all()
-        rows.append({
-            "fio": student.fio,
-            "birthdate": student.birthdate,
-            "group": student.group,
-            "gpa": str(student.gpa)
-        })
-        with self.path.open('w', newline='', encoding='utf-8') as f:
+        rows.append(
+            {
+                "fio": student.fio,
+                "birthdate": student.birthdate,
+                "group": student.group,
+                "gpa": str(student.gpa),
+            }
+        )
+        with self.path.open("w", newline="", encoding="utf-8") as f:
             writer = csv.DictWriter(f, fieldnames=["fio", "birthdate", "group", "gpa"])
             writer.writeheader()
             writer.writerows(rows)
@@ -35,7 +39,10 @@ class Group:
     def find(self, substr: str) -> List[Student]:
         rows = self.__read_all()
         found = [r for r in rows if substr in r["fio"]]
-        return [Student(r["fio"], r["birthdate"], r["group"], float(r["gpa"])) for r in found]
+        return [
+            Student(r["fio"], r["birthdate"], r["group"], float(r["gpa"]))
+            for r in found
+        ]
 
     def remove(self, fio: str):
         rows = self.__read_all()
@@ -43,7 +50,7 @@ class Group:
             if r["fio"] == fio:
                 rows.pop(i)
                 break
-        with self.path.open('w', newline='', encoding='utf-8') as f:
+        with self.path.open("w", newline="", encoding="utf-8") as f:
             writer = csv.DictWriter(f, fieldnames=["fio", "birthdate", "group", "gpa"])
             writer.writeheader()
             writer.writerows(rows)
@@ -56,7 +63,7 @@ class Group:
                     if key in ["fio", "birthdate", "group", "gpa"]:
                         r[key] = str(value)
                 break
-        with self.path.open('w', newline='', encoding='utf-8') as f:
+        with self.path.open("w", newline="", encoding="utf-8") as f:
             writer = csv.DictWriter(f, fieldnames=["fio", "birthdate", "group", "gpa"])
             writer.writeheader()
             writer.writerows(rows)

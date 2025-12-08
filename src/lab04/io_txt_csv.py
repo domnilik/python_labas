@@ -2,12 +2,15 @@ import csv
 from pathlib import Path
 from typing import Iterable, Sequence
 
+
 def read_text(path: str | Path, encoding: str = "utf-8") -> str:
     p = Path(path)
     return p.read_text(encoding=encoding)
 
-def write_csv(rows: Iterable[Sequence], path: str | Path,
-              header: tuple[str, ...] | None = None) -> None:
+
+def write_csv(
+    rows: Iterable[Sequence], path: str | Path, header: tuple[str, ...] | None = None
+) -> None:
     p = Path(path)
     rows_list = list(rows)
 
@@ -15,7 +18,9 @@ def write_csv(rows: Iterable[Sequence], path: str | Path,
         first_length = len(rows_list[0])
         for i, row in enumerate(rows_list):
             if len(row) != first_length:
-                raise ValueError(f"Строка {i} имеет длину {len(row)}, ожидалась {first_length}")
+                raise ValueError(
+                    f"Строка {i} имеет длину {len(row)}, ожидалась {first_length}"
+                )
     p.parent.mkdir(parents=True, exist_ok=True)
 
     with p.open("w", newline="", encoding="utf-8") as f:
@@ -24,9 +29,13 @@ def write_csv(rows: Iterable[Sequence], path: str | Path,
             writer.writerow(header)
         writer.writerows(rows_list)
 
+
 def ensure_parent_dir(path: str | Path) -> None:
     p = Path(path)
-    p.parent.mkdir(parents=True, exist_ok=True) #убрать этот лишний фрагмент кода, есть дальше
+    p.parent.mkdir(
+        parents=True, exist_ok=True
+    )  # убрать этот лишний фрагмент кода, есть дальше
+
 
 if __name__ == "__main__":
     print("Тестирование функций")

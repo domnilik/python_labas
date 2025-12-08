@@ -6,13 +6,7 @@ def min_max(x: list) -> tuple:
     return (min(x), max(x))
 
 
-test_cases = [
-    [3, -1, 5, 5, 0],
-    [42],
-    [-5, -2, -9],
-    [],
-    [1.5, 2, 2.0, -3.1]
-]
+test_cases = [[3, -1, 5, 5, 0], [42], [-5, -2, -9], [], [1.5, 2, 2.0, -3.1]]
 
 print("Тестирование min_max")
 for i, test_data in enumerate(test_cases, 1):
@@ -28,12 +22,7 @@ def unique_sorted(nums):
     return sorted(set(nums))
 
 
-test_cases = [
-    [3, 1, 2, 1, 3],
-    [],
-    [-1, -1, 0, 2, 2],
-    [1.0, 1, 2.5, 2.5, 0]
-]
+test_cases = [[3, 1, 2, 1, 3], [], [-1, -1, 0, 2, 2], [1.0, 1, 2.5, 2.5, 0]]
 
 print("Тестирование unique_sorted")
 for test in test_cases:
@@ -52,11 +41,12 @@ def flatten(mat):
 
     return result
 
+
 test_cases = [
     [[1, 2], [3, 4]],
     [[1, 2], (3, 4, 5)],
     [[1], [], [2, 3]],
-    [[1, 2], "ab"] # вызывает TypeError
+    [[1, 2], "ab"],  # вызывает TypeError
 ]
 
 print("Тестирование flatten")

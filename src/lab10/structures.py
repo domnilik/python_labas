@@ -41,5 +41,3 @@ class Queue:
 
     def is_empty(self) -> bool:
         return not self._data
-
-
