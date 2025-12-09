@@ -225,3 +225,6 @@ class SinglyLinkedList:
         values = list(self)
         return f"SinglyLinkedList({values})"
 ```
+
+#### односвязаные и двусвязные списки - принцип работы
+![](../../images/lab10/img02.jpg)
